@@ -13,8 +13,8 @@ import java.io.*;
 abstract class Screens {
     // variables
     // name of file containing saved serialised objects
-    public static String TFILE_NAME = app() + "T.txt";
-    public static String SFILE_NAME = app() + "S.txt";
+    public static String TFILE_NAME = "NerangHighInfoSysT.txt";
+    public static String SFILE_NAME = "NerangHighInfoSysS.txt";
     public static int nextStudent = 0;
 
     // object arrays
@@ -26,10 +26,6 @@ abstract class Screens {
 
     // methods
     public Screens() {}
-
-    public static String app() {
-        return (APP_NAME);
-    }
 
     // serialises and saves objects to files
     public static void save() {
@@ -204,170 +200,3 @@ abstract class Screens {
         }
     }
 }
-
-
- /* public void studentsMenu(){
-        // telling program to exit when gui closes
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-        // input text field
-        JTextField nameField = new JTextField(20);
-
-        // Output text area:
-        JTextArea rosterArea = new JTextArea(10, 25);
-
-        // buttons:
-        JButton hireBtn = new JButton("Hire"), fireBtn = new JButton("Fire"), retBtn = new JButton("Retire");
-
-        // layoutComponents
-        JPanel box0 = new JPanel(), box1 = new JPanel(), box2 = new JPanel(), box3 = new JPanel();
-        box0.setLayout(new BoxLayout(box0, BoxLayout.Y_AXIS));
-        box1.setLayout(new BoxLayout(box1, BoxLayout.X_AXIS));
-        box2.setLayout(new BoxLayout(box2, BoxLayout.Y_AXIS));
-        box3.setLayout(new BoxLayout(box3, BoxLayout.X_AXIS));
-        frame.add(box0);
-        box0.add(box1);
-        box0.add(box2);
-        box0.add(box3);
-        box1.setAlignmentX(Component.CENTER_ALIGNMENT);
-        box2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        box3.setAlignmentX(Component.CENTER_ALIGNMENT);
-        box1.setBorder(new EmptyBorder(5, 5, 5, 5));
-        box2.setBorder(new EmptyBorder(5, 5, 5, 5));
-        box3.setBorder(new EmptyBorder(5, 5, 5, 5));
-        box1.add(new JLabel("New name:"));
-        box1.add(nameField);
-        box1.add(hireBtn);
-        JLabel rosterLbl = new JLabel("Roster:");
-        box2.add(rosterLbl);
-        rosterLbl.setAlignmentX(Component.LEFT_ALIGNMENT);
-        rosterArea.setEditable(false);
-        rosterArea.setText(roster.toString());
-        JScrollPane scroller = new JScrollPane(rosterArea);
-        box2.add(scroller);
-        scroller.setAlignmentX(Component.LEFT_ALIGNMENT);
-        box3.add(fireBtn);
-        box3.add(retBtn);
-
-
-        // addListeners to the components and the frame.
-
-        fireBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                roster.fire();
-                rosterArea.setText(roster.toString());
-            }
-        });
-        retBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                roster.retire();
-                rosterArea.setText(roster.toString());
-            }
-        });
-        ActionListener hireAL = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                roster.hire(nameField.getText());
-                nameField.setText("");
-                rosterArea.setText(roster.toString());
-            }
-        };
-        nameField.addActionListener(hireAL);
-        hireBtn.addActionListener(hireAL);
-
-        // save on exit
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                save();
-            }
-        });
-
-
-
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-
-*/
-
-/*
-// telling program to exit when gui closes
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-                // input text field
-                JTextField nameField = new JTextField(20);
-
-                // Output text area:
-                JTextArea rosterArea = new JTextArea(10, 25);
-
-                // buttons:
-                JButton hireBtn = new JButton("Hire"), fireBtn = new JButton("Fire"), retBtn = new JButton("Retire");
-
-                // layoutComponents
-                JPanel box0 = new JPanel(), box1 = new JPanel(), box2 = new JPanel(), box3 = new JPanel();
-                box0.setLayout(new BoxLayout(box0, BoxLayout.Y_AXIS));
-                box1.setLayout(new BoxLayout(box1, BoxLayout.X_AXIS));
-                box2.setLayout(new BoxLayout(box2, BoxLayout.Y_AXIS));
-                box3.setLayout(new BoxLayout(box3, BoxLayout.X_AXIS));
-                frame.add(box0);
-                box0.add(box1);
-                box0.add(box2);
-                box0.add(box3);
-                box1.setAlignmentX(Component.CENTER_ALIGNMENT);
-                box2.setAlignmentX(Component.CENTER_ALIGNMENT);
-                box3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                box1.setBorder(new EmptyBorder(5, 5, 5, 5));
-                box2.setBorder(new EmptyBorder(5, 5, 5, 5));
-                box3.setBorder(new EmptyBorder(5, 5, 5, 5));
-                box1.add(new JLabel("New name:"));
-                box1.add(nameField);
-                box1.add(hireBtn);
-                JLabel rosterLbl = new JLabel("Roster:");
-                box2.add(rosterLbl);
-                rosterLbl.setAlignmentX(Component.LEFT_ALIGNMENT);
-                rosterArea.setEditable(false);
-                rosterArea.setText(roster.toString());
-                JScrollPane scroller = new JScrollPane(rosterArea);
-                box2.add(scroller);
-                scroller.setAlignmentX(Component.LEFT_ALIGNMENT);
-                box3.add(fireBtn);
-                box3.add(retBtn);
-
-
-                // addListeners to the components and the frame.
-
-                fireBtn.addActionListener(new ActionListener() {
-public void actionPerformed(ActionEvent e) {
-        roster.fire();
-        rosterArea.setText(roster.toString());
-        }
-        });
-        retBtn.addActionListener(new ActionListener() {
-public void actionPerformed(ActionEvent e) {
-        roster.retire();
-        rosterArea.setText(roster.toString());
-        }
-        });
-        ActionListener hireAL = new ActionListener() {
-public void actionPerformed(ActionEvent e) {
-        roster.hire(nameField.getText());
-        nameField.setText("");
-        rosterArea.setText(roster.toString());
-        }
-        };
-        nameField.addActionListener(hireAL);
-        hireBtn.addActionListener(hireAL);
-
-        // save on exit
-        frame.addWindowListener(new WindowAdapter() {
-public void windowClosing(WindowEvent e) {
-        save();
-        }
-        });
-
-
-
-        frame.pack();
-        frame.setVisible(true);*/
